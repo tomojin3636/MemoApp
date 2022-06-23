@@ -1,14 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { string, bool, shape } from 'prop-types'
+import { string, bool, shape } from 'prop-types';
 
-
-function Hello(props){
+function Hello(props) {
   const { children, bang, style } = props;
-  return(
+  return (
     <View>
       <Text style={[styles.text, style]}>
-        {`Hello ${children}${bang ? '!':''}`}
+        {`Hello ${children}${bang ? '!' : ''}`}
       </Text>
     </View>
   );
@@ -25,12 +24,11 @@ Hello.defaultProps = {
   style: null,
 };
 
-
 const styles = StyleSheet.create({
-  text:{
+  text: {
     color: '#ffffff',
     backgroundColor: 'blue',
-    fontSize:40,
+    fontSize: 40,
     fontWeight: 'bold',
     padding: 16,
   },
