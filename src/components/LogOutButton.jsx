@@ -22,6 +22,7 @@ export default function LogOutButton() {
   }
 
   return (
+    // eslint-disable-next-line react/jsx-no-bind
     <TouchableOpacity onPress={handlePress} style={styles.container}>
       <Text style={styles.label}>ログアウト</Text>
     </TouchableOpacity>
