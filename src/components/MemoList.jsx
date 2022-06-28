@@ -12,6 +12,7 @@ import Icon from './Icon';
 import { dateToString } from '../utils';
 
 export default function MemoList(props) {
+  // eslint-disable-next-line react/prop-types
   const { memos } = props;
   const navigation = useNavigation();
 
@@ -29,7 +30,7 @@ export default function MemoList(props) {
           text: '削除する',
           style: 'destructive',
           onPress: () => {
-            ref.delete().catch((error) => { Alert.alert('削除に失敗しました。'); });
+            ref.delete().catch(() => { Alert.alert('削除に失敗しました。'); });
           },
         },
       ]);
@@ -60,6 +61,7 @@ export default function MemoList(props) {
     <View style={styles.container}>
       <FlatList
         data={memos}
+        // eslint-disable-next-line react/jsx-no-bind
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
