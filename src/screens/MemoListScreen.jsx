@@ -59,7 +59,7 @@ export default function MemoListScreen(props) {
           <Button
             style={emptyStyles.button}
             label="作成する"
-            onPress={() => {navigation.navigate('MemoCreate'); }}
+            onPress={() => { navigation.navigate('MemoCreate'); }}
           />
         </View>
       </View>

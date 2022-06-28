@@ -5,6 +5,7 @@ import {
 import firebase from 'firebase';
 
 import Button from '../components/Button';
+import { translateErrors } from '../utils';
 
 export default function SingUpScreen(props) {
   const { navigation } = props;
@@ -22,8 +23,8 @@ export default function SingUpScreen(props) {
         });
       })
       .catch((error) => {
-        console.log(error.code, error.message);
-        Alert.alert(error.message);
+        const errorMsg = translateErrors(error.code);
+        Alert.alert(errorMsg.title, errorMsg.description);
       });
   }
   return (
