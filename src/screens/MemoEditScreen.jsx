@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  View, TextInput, StyleSheet, Alert
+  View, TextInput, StyleSheet, Alert,
 } from 'react-native';
 import { shape, string } from 'prop-types';
 import firebase from 'firebase';
@@ -22,7 +22,7 @@ export default function MemoEditScreen(props) {
       ref.set({
         bodyText: body,
         updatedAt: new Date(),
-      }, { merge: true}).then(() => {
+      }, { merge: true }).then(() => {
         navigation.goBack();
       }).catch((error) => {
         Alert.alert(error.code);
